@@ -43,7 +43,7 @@ class App extends Component {
   }
 
   async componentWillMount() {
-    const response = await axios.get(`http://localhost:6681/listings`);
+    const response = await axios.get(`http://localhost:5000/listings`);
     const json = await response.data;
     this.setState({ data: json });
   }
