@@ -24,9 +24,9 @@ class App extends Component {
 
 
     if (direction === "left") {
-      await axios.delete(`http://localhost:6881/listings/delete/${listingId}`)
+      await axios.delete(`http://localhost:5000/listings/delete/${listingId}`)
     } else {
-      await axios.post("http://localhost:6881/listings/recordSwipe", { id: listingId, session_id: sessionId, direction })
+      await axios.post("http://localhost:5000/listings/recordSwipe", { id: listingId, session_id: sessionId, direction })
     }
   }
 
@@ -35,7 +35,7 @@ class App extends Component {
       liked: !this.state.liked
     });
 
-    await axios.post("http://localhost:6881/listings/updateLike", { id: listingId });
+    await axios.post("http://localhost:5000/listings/updateLike", { id: listingId });
   }
 
   showDetails(listing) {
